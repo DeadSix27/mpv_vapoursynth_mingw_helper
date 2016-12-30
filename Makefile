@@ -32,8 +32,8 @@ all:
 	$(DLLTOOL) -d VSScript.def -l libvapoursynth-script.a
 	
 	@echo Creating PKG-Config files
-	$(WGET_CMD) https://raw.githubusercontent.com/DeadSix27/mpv_vapoursynth_python_mingw/master/vapoursynth/vapoursynth-script.pc
-	$(WGET_CMD) https://raw.githubusercontent.com/DeadSix27/mpv_vapoursynth_python_mingw/master/vapoursynth/vapoursynth.pc
+	$(WGET_CMD) https://raw.githubusercontent.com/DeadSix27/mpv_vapoursynth_python_mingw/master/vapoursynth-script.pc
+	$(WGET_CMD) https://raw.githubusercontent.com/DeadSix27/mpv_vapoursynth_python_mingw/master/vapoursynth.pc
 	$(PYTHON_CMD) create_pc.py "vapoursynth-script.pc" $(INSTALL_DIR)
 	$(PYTHON_CMD) create_pc.py "vapoursynth.pc" $(INSTALL_DIR)
 	@echo Cleaning up..
