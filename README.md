@@ -1,9 +1,9 @@
-# mpv_vapoursynth_python_mingw
+# mpv_vapoursynth_mingw_helper
 
-Offers library and include files for mingw of various tools.
+Offers a tool to create mingw compatible library files for vapoursynth
 
-Those libraries are created using the dlltool on the official windows binaries to work with mingw.
-
-Reasons can vary from being too complicated to cross compile or unable to.
+Those libraries are created using the dlltool and gendef on the official windows binaries to work with mingw.
 
 See: www.mingw.org/wiki/createimportlibraries for more information
+
+VapourSynth sourcecode: https://github.com/vapoursynth/vapoursynth
