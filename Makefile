@@ -8,7 +8,7 @@ ARCHTYPE = 64
 RELEASE_FILE_URL = "https://github.com/DeadSix27/mpv_vapoursynth_python_mingw/releases/download/R35/VapourSynth$(ARCHTYPE)-Portable-R35.tar.gz"
 RELEASE_FILE_NAME = "VapourSynth$(ARCHTYPE)-Portable-R35.tar.gz"
 TAR_CMD = tar
-INSTALL_DIR = output/test
+PREFIX = output/test
 PYTHON_CMD = python
 
 all:
@@ -34,8 +34,8 @@ all:
 	@echo Creating PKG-Config files
 	$(WGET_CMD) https://raw.githubusercontent.com/DeadSix27/mpv_vapoursynth_python_mingw/master/vapoursynth-script.pc
 	$(WGET_CMD) https://raw.githubusercontent.com/DeadSix27/mpv_vapoursynth_python_mingw/master/vapoursynth.pc
-	$(PYTHON_CMD) create_pc.py "vapoursynth-script.pc" $(INSTALL_DIR)
-	$(PYTHON_CMD) create_pc.py "vapoursynth.pc" $(INSTALL_DIR)
+	$(PYTHON_CMD) create_pc.py "vapoursynth-script.pc" $(PREFIX)
+	$(PYTHON_CMD) create_pc.py "vapoursynth.pc" $(PREFIX)
 	@echo Cleaning up..
 	rm *.tar.gz
 	
@@ -44,16 +44,16 @@ clean:
 	rm -drf _vstemp include vapoursynth
 	@echo Removed all def files
 install:
-	@echo Installing into $(INSTALL_DIR)
-	mkdir -p $(INSTALL_DIR)
-	mkdir -p $(INSTALL_DIR)/lib/pkgconfig/
-	cp -rv ./libvapoursynth.a $(INSTALL_DIR)/lib/libvapoursynth.a
-	cp -rv ./vapoursynth.pc $(INSTALL_DIR)/lib/pkgconfig/vapoursynth.pc
-	cp -rv ./vapoursynth.pc $(INSTALL_DIR)/lib/libvapoursynth-script.a
-	cp -rv ./vapoursynth-script.pc $(INSTALL_DIR)/lib/pkgconfig/vapoursynth-script.pc
-	mkdir -p  $(INSTALL_DIR)/include/vapoursynth
-	cp -rv ./vapoursynth  $(INSTALL_DIR)/include/
+	@echo Installing into $(PREFIX)
+	mkdir -p $(PREFIX)
+	mkdir -p $(PREFIX)/lib/pkgconfig/
+	cp -rv ./libvapoursynth.a $(PREFIX)/lib/libvapoursynth.a
+	cp -rv ./vapoursynth.pc $(PREFIX)/lib/pkgconfig/vapoursynth.pc
+	cp -rv ./vapoursynth.pc $(PREFIX)/lib/libvapoursynth-script.a
+	cp -rv ./vapoursynth-script.pc $(PREFIX)/lib/pkgconfig/vapoursynth-script.pc
+	mkdir -p  $(PREFIX)/include/vapoursynth
+	cp -rv ./vapoursynth  $(PREFIX)/include/
 uninstall:
-	rm -fr $(INSTALL_DIR)/lib/pkgconfig/vapoursynth.pc $(INSTALL_DIR)/lib/pkgconfig/vapoursynth-script.pc
-	rm -fr $(INSTALL_DIR)/lib/libvapoursynth-script.a $(INSTALL_DIR)/lib/libvapoursynth.a
-	rm -fr $(INSTALL_DIR)/include/vapoursynth
+	rm -fr $(PREFIX)/lib/pkgconfig/vapoursynth.pc $(PREFIX)/lib/pkgconfig/vapoursynth-script.pc
+	rm -fr $(PREFIX)/lib/libvapoursynth-script.a $(PREFIX)/lib/libvapoursynth.a
+	rm -fr $(PREFIX)/include/vapoursynth
