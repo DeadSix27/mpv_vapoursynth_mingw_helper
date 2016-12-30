@@ -11,6 +11,19 @@ RELEASE_FILE_NAME = "VapourSynth$(ARCHTYPE)-Portable-R35.tar.gz"
 TAR_CMD = tar
 PYTHON_CMD = python
 
+test:
+	@echo PREFIX is: $(PREFIX)
+	@echo GENDEF is: $(GENDEF)
+	@echo DLLTOOL is: $(DLLTOOL)
+	@echo SED_CMD is: $(SED_CMD)
+	@echo WGET_CMD is: $(WGET_CMD)
+	@echo INCLUDE_FILES_URL is: $(INCLUDE_FILES_URL)
+	@echo INCLUDE_FILES_NAME is: $(INCLUDE_FILES_NAME)
+	@echo ARCHTYPE is: $(ARCHTYPE)
+	@echo RELEASE_FILE_URL is: $(RELEASE_FILE_URL)
+	@echo RELEASE_FILE_NAME is: $(RELEASE_FILE_NAME)
+	@echo TAR_CMD is: $(TAR_CMD)
+	@echo PYTHON_CMD is: $(PYTHON_CMD)
 all:
 	@echo Downloading include files..
 	$(WGET_CMD) $(INCLUDE_FILES_URL) -O $(INCLUDE_FILES_NAME)
