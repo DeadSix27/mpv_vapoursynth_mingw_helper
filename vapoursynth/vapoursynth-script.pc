@@ -1,4 +1,4 @@
-prefix=/ffm/sandbox/cross_compilers/mingw-w64-x86_64/x86_64-w64-mingw32
+prefix=[[prefix]]
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include/vapoursynth
