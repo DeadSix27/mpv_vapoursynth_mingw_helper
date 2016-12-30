@@ -1,14 +1,14 @@
-GENDEF = gendef
-DLLTOOL = dlltool
-SED_CMD = sed
-WGET_CMD = wget -q --show-progress
+PREFIX=output
+GENDEF=gendef
+DLLTOOL=dlltool
+SED_CMD=sed
+WGET_CMD=wget -q --show-progress
 INCLUDE_FILES_URL = "https://github.com/DeadSix27/mpv_vapoursynth_python_mingw/releases/download/R35/vapoursynth_R35_mingw_includes.tar.gz"
 INCLUDE_FILES_NAME = "vapoursynth_R35_includes.tar.gz"
-ARCHTYPE = 64
+ARCHTYPE=64
 RELEASE_FILE_URL = "https://github.com/DeadSix27/mpv_vapoursynth_python_mingw/releases/download/R35/VapourSynth$(ARCHTYPE)-Portable-R35.tar.gz"
 RELEASE_FILE_NAME = "VapourSynth$(ARCHTYPE)-Portable-R35.tar.gz"
 TAR_CMD = tar
-PREFIX = output/test
 PYTHON_CMD = python
 
 all:
