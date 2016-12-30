@@ -3,10 +3,10 @@ GENDEF=gendef
 DLLTOOL=dlltool
 SED_CMD=sed
 WGET_CMD=wget -q --show-progress
-INCLUDE_FILES_URL = "https://github.com/DeadSix27/mpv_vapoursynth_python_mingw/releases/download/R35/vapoursynth_R35_mingw_includes.tar.gz"
+INCLUDE_FILES_URL = "https://github.com/DeadSix27/mpv_vapoursynth_mingw_helper/releases/download/R35/vapoursynth_R35_mingw_includes.tar.gz"
 INCLUDE_FILES_NAME = "vapoursynth_R35_includes.tar.gz"
 ARCHTYPE=64
-RELEASE_FILE_URL = "https://github.com/DeadSix27/mpv_vapoursynth_python_mingw/releases/download/R35/VapourSynth$(ARCHTYPE)-Portable-R35.tar.gz"
+RELEASE_FILE_URL = "https://github.com/DeadSix27/mpv_vapoursynth_mingw_helper/releases/download/R35/VapourSynth$(ARCHTYPE)-Portable-R35.tar.gz"
 RELEASE_FILE_NAME = "VapourSynth$(ARCHTYPE)-Portable-R35.tar.gz"
 TAR_CMD = tar
 PYTHON_CMD = python
@@ -32,8 +32,8 @@ all:
 	$(DLLTOOL) -d VSScript.def -l libvapoursynth-script.a
 	
 	@echo Creating PKG-Config files
-	$(WGET_CMD) https://raw.githubusercontent.com/DeadSix27/mpv_vapoursynth_python_mingw/master/vapoursynth-script.pc
-	$(WGET_CMD) https://raw.githubusercontent.com/DeadSix27/mpv_vapoursynth_python_mingw/master/vapoursynth.pc
+	$(WGET_CMD) https://raw.githubusercontent.com/DeadSix27/mpv_vapoursynth_mingw_helper/master/vapoursynth-script.pc
+	$(WGET_CMD) https://raw.githubusercontent.com/DeadSix27/mpv_vapoursynth_mingw_helper/master/vapoursynth.pc
 	$(PYTHON_CMD) create_pc.py "vapoursynth-script.pc" $(PREFIX)
 	$(PYTHON_CMD) create_pc.py "vapoursynth.pc" $(PREFIX)
 	@echo Cleaning up..
