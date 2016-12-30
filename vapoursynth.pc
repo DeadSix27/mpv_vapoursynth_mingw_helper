@@ -1,0 +1,13 @@
+prefix=[[prefix]]
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/vapoursynth
+
+Name: vapoursynth
+Description: A frameserver for the 21st century
+Version: 35
+
+Requires.private: zimg
+Libs: -L${libdir} -lvapoursynth
+Libs.private: -L/usr/local/lib -lzimg -ldl
+Cflags: -I${includedir}
